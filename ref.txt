@@ -1,0 +1,58 @@
+studywebdevelopment.com
+-> everthing to start your own freelancing business
+using the code brad25 to get 25% off
+
+// install and check version: npm install express, npm version express
+
+// npm init -y
+// npm i express
+// node file
+// ctrl C
+
+// run nodemon using: npm install -g nodemon (run as admin) -> npm run dev
+// npm install moment
+// npm i uuid
+
+https://flexiple.com/javascript/javascript-require-vs-import
+----- How is require() different from import()
+require() statement basically reads a JavaScript file, executes it, and then proceeds 
+to return the export object. 
+require() statement not only allows to add built-in core NodeJS modules 
+but also community-based and local modules.
+
+import() & export() statements are used to refer to an ES module
+the specifier of this statement can either be a URL-style relative path or a package name
+Also, the import statement cannot be used in embedded scripts unless such script has a type="module". 
+A dynamic import can be used for scripts whose type is not “module”
+
+One of the major differences between require() and import() is that require() can be called from anywhere inside the program 
+whereas import() cannot be called conditionally, it always runs at the beginning of the file.
+To use the require() statement, a module must be saved with .js extension as opposed to .mjs when the import() statement is used.
+ES modules can be loaded dynamically via the import() function unlike require()
+
+https://www.geeksforgeeks.org/express-js-res-sendfile-function/
+----- res.sendFile -----
+send a file response to an HTTP request
+transfer the file at the given path
+sets the content type response HTTP-header field based on the fileName extension
+
+NOTE:::
+// This isn't ideal as we have to put a route manually for every single page
+// If you want just a static server that serves just HTML CSS stuff
+// Express comes with a functionality to make a folder a static folder
+// like we can make this public folder static too
+app.get('/', (req, res) => {
+    // (1.) res.send('<h1>Hello world</h1>');
+
+    // (2.) we want to send file to the current directory
+    // __dirname - get the current directory, go into a folder public, under a filename index.html
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+middleware funcitons - a function with access to request & response
+you can actually change things & add things
+app.use() - when we want to include middleware
+
+
+moment
